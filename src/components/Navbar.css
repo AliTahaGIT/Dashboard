@@ -5,7 +5,7 @@
     align-items: center;
     color: var(--text-color);
     font-size: 15px;
-    padding: 10px 35px 10px 35px;
+    padding: 10px 45px 10px 35px;
     border-bottom: 1px solid var(--main-border);
 }
 
@@ -13,9 +13,35 @@ h1{
     font-weight: 400;
 }
 
+.nav-left{
+    display: flex;
+    gap: 20px;
+    padding: 5px;
+}
+
+.nav-pfp{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pfp-img{
+    height: 45px;
+}
+
+.pfp-arrow{
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-70%);
+  font-size: 25px;
+}
+
 .nav-icon {
   position: relative; /* nav icon is the parent */
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -27,8 +53,8 @@ h1{
 
 .noti-badge {
   position: absolute; /* badge is child */
-  top: -5px;
-  right: -10px;
+  top: 5px;
+  right: -8px;
   min-width: 16px;
   height: 16px;
   background-color: red;

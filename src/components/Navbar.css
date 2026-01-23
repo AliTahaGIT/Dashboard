@@ -1,0 +1,43 @@
+.nav-main{
+    background-color: var(--bg2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 15px;
+    padding: 10px 35px 10px 35px;
+    border-bottom: 1px solid var(--main-border);
+}
+
+h1{
+    font-weight: 400;
+}
+
+.nav-icon {
+  position: relative; /* nav icon is the parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-img {
+  height: 25px;
+}
+
+.noti-badge {
+  position: absolute; /* badge is child */
+  top: -5px;
+  right: -10px;
+  min-width: 16px;
+  height: 16px;
+  background-color: red;
+  color: var(--text-color);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px;
+  border-radius: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

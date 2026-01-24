@@ -1,18 +1,27 @@
-# React + Vite
+# Project Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Project includes a Prototype for an admin dashboard that shows different statistics and have different operations regarding an E-Commerce website.
 
-Currently, two official plugins are available:
+All Data on this Dashboard are demo data not real data from an API or any other source.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dashboard Includes:
+- Home Page with Quick Actions
+- Statistics Page that show different simple stats
+- Data Table that shows Order Details
+- Charts Section that shows detailed Statistics
+- Recent activity page that shows the activity thats going on the website
 
-## React Compiler
+## What NPM Packages where used
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- react-router-Dom
+- chart.js
+- react-chartjs-2
 
-Note: This will impact Vite dev & build performances.
+## Challenges Encountered
+- I normally don't do sidebars so this sidebar was something challenging
+- The charts page was the one that took most of my time since i had to learn how to use new npm package for the charts
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Things i learned
+- Collapsable Sidebars
+- Charts and chartjs package
+- Styling Best Practices

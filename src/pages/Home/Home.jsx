@@ -35,7 +35,7 @@ function Home() {
         <h1 className='home-header'> Quick Actions </h1>
         <div className='quick-action-main'>
             {quickActions.map((action) => (
-                <div className='quick-action-item'>
+                <div key={action.name} className='quick-action-item'>
                     <img alt={action.name} src={action.icon} className="quick-action-img"/>
                     <p className='quick-action-name'>{action.name}</p>
                     <p className='quick-action-desc'>{action.desc}</p>

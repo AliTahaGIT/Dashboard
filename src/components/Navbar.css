@@ -90,7 +90,7 @@ h1{
     }
 
     h1{
-      font-size: 18px;
+      font-size: 14px;
     }
 
     .nav-left{
@@ -102,8 +102,9 @@ h1{
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
   .burgerMenu{
     display: inline-flex;
+    cursor: pointer;
   }
 }

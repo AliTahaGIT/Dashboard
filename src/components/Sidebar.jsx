@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
@@ -16,7 +15,7 @@ const navbarItems = [
   },
   {
     name: "Data Table",
-    path: "/data-table",
+    path: "/datatable",
     iconUrl: "https://api.iconify.design/mdi:table.svg?color=%23F7F6F2",
   },
   {
@@ -26,7 +25,7 @@ const navbarItems = [
   },
   {
     name: "Recent Activity",
-    path: "/recent-activity",
+    path: "/activity",
     iconUrl: "https://api.iconify.design/mdi:history.svg?color=%23F7F6F2",
   },
 ];

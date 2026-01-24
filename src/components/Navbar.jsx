@@ -5,6 +5,7 @@ function Navbar() {
   return (
     <div className='nav-main'>
         <div className='nav-left'>
+            <p className='burgerMenu'>☰</p>
             <h1>Welcome Admin</h1>
             <div className="nav-icon">
                 <img src="https://api.iconify.design/mdi:bell-outline.svg?color=%23F7F6F2" alt="notifications" className="nav-img"/>

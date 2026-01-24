@@ -1,34 +1,45 @@
 .nav-main{
-    background-color: var(--bg2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-color);
-    font-size: 15px;
-    padding: 10px 45px 10px 35px;
-    border-bottom: 1px solid var(--main-border);
+  background-color: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 15px;
+  padding: 10px 45px 10px 35px;
+  border-bottom: 1px solid var(--main-border);
+}
+
+.burgerMenu{
+  display: none;
 }
 
 h1{
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .nav-left{
-    display: flex;
-    gap: 20px;
-    padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
 }
 
 .nav-pfp{
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-pfp:hover{
+  transform: translateY(-3px);
+  transition: 300ms;
 }
 
 .pfp-img{
-    height: 45px;
+  height: 45px;
 }
 
 .pfp-arrow{
@@ -47,14 +58,19 @@ h1{
   cursor: pointer;
 }
 
+.nav-icon:hover{
+  transform: translateY(-3px);
+  transition: 300ms;
+}
+
 .nav-img {
   height: 25px;
 }
 
 .noti-badge {
   position: absolute; /* badge is child */
-  top: 5px;
-  right: -8px;
+  top: -5px;
+  right: -5px;
   min-width: 16px;
   height: 16px;
   background-color: red;
@@ -66,4 +82,28 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 615px){
+    .nav-main{
+      padding-left: 10px;
+    }
+
+    h1{
+      font-size: 18px;
+    }
+
+    .nav-left{
+      gap: 12px;
+    }
+
+    .nav-img {
+      height: 18px;
+    }
+}
+
+@media (max-width: 768px){
+  .burgerMenu{
+    display: inline-flex;
+  }
 }

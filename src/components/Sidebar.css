@@ -14,6 +14,10 @@
     width: 100px;
 }
 
+.active{
+  background-color: #0B1A17;
+}
+
 .sidebar-top{
     color: var(--text-color);
     display: flex;
@@ -71,4 +75,10 @@
 
 .sidebar-closed .item-label {
   display: none;
+}
+
+@media (max-width: 768px){
+  .sidebar{
+    display: none;
+  }
 }

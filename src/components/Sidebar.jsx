@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 const navbarItems = [
@@ -28,18 +29,16 @@ const navbarItems = [
     path: "/recent-activity",
     iconUrl: "https://api.iconify.design/mdi:history.svg?color=%23F7F6F2",
   },
-  {
-    name: "Quick Actions",
-    path: "/quick-actions",
-    iconUrl: "https://api.iconify.design/mdi:lightning-bolt-outline.svg?color=%23F7F6F2",
-  },
 ];
 
 
 
 
 function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const activePath = location.pathname;
+  const navigate = useNavigate();
 
   return (
     <nav className={`sidebar ${isOpen ? "" : "sidebar-closed"}`}>
@@ -52,7 +51,7 @@ function Sidebar() {
 
       <ul className="sidebar-items">
         {navbarItems.map((item) => (
-          <li key={item.path} className="sidebar-item">
+          <li key={item.path} className={`sidebar-item ${activePath === item.path ? "active" : ""}`} onClick={() => navigate(item.path)}>
               <img src={item.iconUrl} alt={item.name} className="item-img"/>
               <p className="item-label">{item.name}</p>
           </li>

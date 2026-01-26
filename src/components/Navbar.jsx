@@ -1,4 +1,4 @@
-import React from 'react'
+import Avatar from '@mui/material/Avatar';
 import './Navbar.css'
 
 function Navbar({ onOpenMobileSidebar }) {
@@ -6,17 +6,24 @@ function Navbar({ onOpenMobileSidebar }) {
     <div className='nav-main'>
         <div className='nav-left'>
             <p className='burgerMenu' onClick={ onOpenMobileSidebar }>☰</p>
-            <h1>Welcome Admin – {new Date().toLocaleDateString("en-GB")}</h1>
-            <div className="nav-icon">
-                <img src="https://api.iconify.design/mdi:bell-outline.svg?color=%23F7F6F2" alt="notifications" className="nav-img"/>
-                <span className="noti-badge">12</span>
+            <div className='nav-top'>
+                <h1 className='nav-header'>Welcome Mr. Ali Taha</h1>
+                <span className='nav-date'>{new Date().toLocaleDateString("en-GB")}</span>
             </div>
         </div>
 
-        <div className='nav-pfp'>
-            <img alt='pfp' src='https://api.iconify.design/mdi:account-circle.svg?color=%23F7F6F2' className='pfp-img'/>
-            <p className='pfp-arrow'>⌄</p>
+
+        <div className='nav-right'>
+            <div className="nav-icon">
+                <img src="https://api.iconify.design/mdi:bell-outline.svg?color=%2300000" alt="notifications" className="nav-img"/>
+                <span className="noti-badge">12</span>
+            </div>
+            <div className='nav-pfp'>
+                <Avatar alt="User" src="https://randomuser.me/api/portraits/men/18.jpg" sx={{ width: 45, height: 45 }} />
+                <p className='pfp-arrow'>⌄</p>
+            </div>
         </div>
+        
     </div>
   )
 }

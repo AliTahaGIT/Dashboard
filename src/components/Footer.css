@@ -4,8 +4,8 @@ footer{
     align-items: center;
     background-color: var(--bg2);
     color: var(--text-color);
-    font-weight: 200;
-    padding: 10px;
+    font-weight: 300;
+    padding: 12px;
     border-top: 1px solid var(--main-border);
     text-align: center;
 }

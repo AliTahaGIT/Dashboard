@@ -1,20 +1,30 @@
 .nav-main{
-  background-color: var(--bg2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--text-color);
-  font-size: 15px;
   padding: 10px 45px 10px 35px;
-  border-bottom: 1px solid var(--main-border);
+  border-bottom: 3px solid var(--main-border);
 }
 
 .burgerMenu{
   display: none;
 }
 
-h1{
+.nav-top{
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header{
+  font-size: 22px;
   font-weight: 400;
+  
+}
+
+.nav-date{
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .nav-left{
@@ -23,6 +33,13 @@ h1{
   align-items: center;
   gap: 20px;
   padding: 5px;
+}
+
+.nav-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
 }
 
 .nav-pfp{
@@ -74,7 +91,7 @@ h1{
   min-width: 16px;
   height: 16px;
   background-color: red;
-  color: var(--text-color);
+  color: white;
   font-size: 10px;
   font-weight: 600;
   padding: 2px;
@@ -89,16 +106,16 @@ h1{
       padding-left: 10px;
     }
 
-    h1{
+    .nav-header{
+      font-size: 18px;
+    }
+
+    .nav-date{
       font-size: 14px;
     }
 
     .nav-left{
       gap: 12px;
-    }
-
-    .nav-img {
-      height: 18px;
     }
 }
 

@@ -1,7 +1,7 @@
 .home-main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     min-height: 100%;
@@ -34,7 +34,7 @@
     border-radius: 20px;
     gap: 10px;
     box-shadow: gray 0px 4px 12px;
-    width: 350px;
+    min-width: 25%;
     min-height: 220px;
 }
 
@@ -57,7 +57,7 @@
     font-weight: 400;
     max-width: 300px;
     text-align: center;
-    color: var(--main-border);
+    color: var(--text3-color);
 }
 
 .quick-action-btn {

@@ -7,7 +7,6 @@
   position: sticky;
   top: 0;
   transition: width 250ms ease;
-  border-right: 1px solid var(--main-border);
 }
 
 .sidebar-closed{
@@ -15,23 +14,40 @@
 }
 
 .active{
-  background-color: var(--heading-color);
+  background-color: var(--hover);
 }
 
 .sidebar-top{
     color: var(--text-color);
     display: flex;
-    justify-content: flex-end;
-    padding: 5px 15px 5px 5px;
+    justify-content: space-between;
     font-size: 20px;
     cursor: pointer;
+    margin-top: 56px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    gap: 22px;
+    border-bottom: 3px solid var(--main-border);
+}
+
+.nav-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo-name {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .sidebar-items{
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    gap: 35px;
+    padding: 16px;
+    gap: 25px;
 }
 
 .sidebar-item{
@@ -43,11 +59,11 @@
     padding: 10px;
     border-radius: 10px;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .sidebar-item:hover{
-    background-color: var(--heading-color);
+    background-color: var(--hover);
     color: var(--text-color);
     transition: 350ms;
 }

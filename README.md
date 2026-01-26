@@ -16,6 +16,7 @@ Dashboard Includes:
 - react-router-Dom
 - chart.js
 - react-chartjs-2
+- Material UI
 
 ## Challenges Encountered
 - I normally don't do sidebars so this sidebar was something challenging

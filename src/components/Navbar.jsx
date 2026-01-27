@@ -2,11 +2,11 @@ import Avatar from '@mui/material/Avatar';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import './Navbar.css'
 
-function Navbar({ onOpenMobileSidebar }) {
+function Navbar() {
   return (
     <div className='nav-main'>
         <div className='nav-left'>
-            <p className='burgerMenu' onClick={ onOpenMobileSidebar }>☰</p>
+            {/* <p className='burgerMenu' onClick={ onOpenMobileSidebar }>☰</p> */}
             <div className='nav-top'>
                 <h1 className='nav-header'>Welcome Mr. Ali Taha</h1>
                 <span className='nav-date'>{new Date().toLocaleDateString("en-GB")}</span>

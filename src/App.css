@@ -37,8 +37,8 @@ body {
 
 .layout {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  height: 100dvh; /*fixes mobile padding issue*/
+  overflow: visible; /*fixes mobile padding issue*/
 }
 
 .main-content {

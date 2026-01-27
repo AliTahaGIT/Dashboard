@@ -6,27 +6,27 @@ const navbarItems = [
   {
     name: "Home",
     path: "/",
-    iconUrl: "https://api.iconify.design/mdi:home-outline.svg?color=%23F7F6F2",
+    iconUrl: "https://api.iconify.design/mdi:home-outline.svg?color=%231F1F1F",
   },
   {
     name: "Statistics",
     path: "/statistics",
-    iconUrl: "https://api.iconify.design/mdi:chart-line.svg?color=%23F7F6F2",
+    iconUrl: "https://api.iconify.design/mdi:chart-line.svg?color=%231F1F1F",
   },
   {
     name: "Data Table",
     path: "/datatable",
-    iconUrl: "https://api.iconify.design/mdi:table.svg?color=%23F7F6F2",
+    iconUrl: "https://api.iconify.design/mdi:table.svg?color=%231F1F1F",
   },
   {
     name: "Charts",
     path: "/charts",
-    iconUrl: "https://api.iconify.design/mdi:chart-box-outline.svg?color=%23F7F6F2",
+    iconUrl: "https://api.iconify.design/mdi:chart-box-outline.svg?color=%231F1F1F",
   },
   {
     name: "Recent Activity",
     path: "/activity",
-    iconUrl: "https://api.iconify.design/mdi:history.svg?color=%23F7F6F2",
+    iconUrl: "https://api.iconify.design/mdi:history.svg?color=%231F1F1F",
   },
 ];
 

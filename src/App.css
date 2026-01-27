@@ -1,13 +1,20 @@
 :root {
-  --text-color: #000000;
+  --text-color: #1F1F1F;
   --text2-color: #343231;
   --text3-color: #5A5A51;
+  --text4-color: #f7f7f8;
   --heading-color: #0B1A17;
   --bg1: #fefefe;
   --bg2: #f7f7f8;
   --main-border: #D3D3D3;
-  --card-bg: white;
+  --card-bg: #f5f6f8;
+  --card-border: #e6e8ec;
   --hover: #c9cacc;
+  --btn-color: #3E8EF4;
+  --btn-altColor: #88c2cd;
+  --success: #16a34a;
+  --error: #dc2626;
+  --warning: #F59E0B;
 }
 
 
@@ -15,7 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 html,

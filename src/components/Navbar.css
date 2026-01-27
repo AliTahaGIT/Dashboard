@@ -61,8 +61,8 @@
 
 .pfp-arrow{
   position: absolute;
-  right: -15px;
-  top: 50%;
+  right: -24px;
+  top: 60%;
   transform: translateY(-70%);
   font-size: 25px;
 }

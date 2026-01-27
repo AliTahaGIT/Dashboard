@@ -34,7 +34,7 @@
     height: 100%;
     width: 260px;
     background-color: var(--bg2);
-    border-right: 1px solid var(--main-border);
+    border-right: 2px solid var(--main-border);
     display: flex;
     flex-direction: column;
     transform: translateX(-100%);
@@ -82,12 +82,12 @@
   }
 
   .msb-item:hover {
-    background-color: var(--heading-color);
+    background-color: var(--hover);
     transition: 350ms;
   }
 
   .msb-item.active {
-    background-color: var(--heading-color);
+    background-color: var(--hover);
   }
 
   .msb-img {

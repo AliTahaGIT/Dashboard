@@ -1,46 +1,45 @@
 .stats-main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     min-height: 100%;
-    padding: 20px;
-    gap: 50px;
+    padding: 25px;
+    gap: 20px;
 }
 
 .stats-header{
     color: var(--heading-color);
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 700;
-    text-align: center;
 }
 
 .stats-cards-main {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    width: 100%;  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: stretch;
 }
 
 .stats-card {
-    background-color: var(--card-bg);
-    box-shadow: gray 0px 4px 12px;
-    border-radius: 18px;
-    padding: 25px;
-    width: 350px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
+    align-items: flex-start;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    gap: 8px;
+    height: 100%;          
+    width: 100%;           
+    border: 2px solid var(--card-border);
     transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 .stats-card:hover {
     transform: translateY(-6px);
-    box-shadow: gray 0px 10px 24px;
+    box-shadow: gray 0px 30px 50px;
 }
 
 .stat-card-img {
@@ -51,29 +50,30 @@
 }
 
 .stat-card-name {
-    color: var(--text2-color);
+    color: var(--text-color);
     font-weight: 800;
     font-size: 22px;
     margin: 0;
 }
 
 .stat-card-value {
-    font-weight: 800;
-    font-size: 28px;
+    font-weight: 500;
+    font-size: 20px;
     margin: 0;
+    color: var(--text2-color);
 }
 
 .stat-card-percentage {
     font-weight: 800;
     font-size: 16px;
-    margin: 0;
+    margin-left: auto;
 }
 
 .stat-card-percentage.trend-up {
-    color: #16a34a; 
+    color: var(--success); 
 }
 
 .stat-card-percentage.trend-down {
-    color: #dc2626; 
+    color: var(--error); 
 }
 

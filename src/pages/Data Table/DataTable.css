@@ -2,28 +2,37 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     min-height: 100%;
     padding: 20px;
-    gap: 30px;
+    gap: 20px;
 }
 
 .datatable-header{
     color: var(--heading-color);
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 700;
-    text-align: center;
 }
 
 .datatable-search {
+    position: relative;
+    display: flex;
+    align-items: center;
     width: 40%;
-    align-self: flex-start;
+}
+
+.search-icon {
+    position: absolute;
+    color: #999;
+    font-size: 20px;
+    transform: translateX(50%);
+    pointer-events: none;
 }
 
 .datatable-search-input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px 36px;
     border-radius: 12px;
     border: 1px solid var(--main-border);
     background-color: white;
@@ -34,7 +43,7 @@
 }
 
 .datatable-search-input::placeholder {
-    color: var(--main-border);
+    color: var(--text2-color);
 }
 
 .datatable-search-input:focus {
@@ -43,13 +52,16 @@
 }
 
 
-.datatable-table-wrapper{
-    overflow-y: auto;
+.datatable-table-wrapper {
     max-height: 550px;
+    overflow-x: auto; 
+    overflow-y: auto;  
+    width: 100%;
 }
 
 table{
     width: 100%;
+    min-width: 900px;
     table-layout: fixed;
     border-collapse: collapse;
 }
@@ -57,8 +69,8 @@ table{
 thead th{
     position: sticky;
     top: 0;
-    background-color: #9AD3BC;
-    color: var(--heading-color);
+    background-color: var(--text3-color);
+    color: var(--text4-color);
     font-size: 16px;
 }
 
@@ -72,56 +84,8 @@ th, td{
 }
 
 tr:hover{
-    background-color: #9AD3BC;
+    background-color: var(--bg2);
     cursor: pointer;
-}
-
-.datatable-actions{
-    display: flex;
-    justify-content: center;
-    gap:10px;
-}
-
-.datatable-btn-view {
-    background-color: #2563eb; 
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 200ms ease;
-}
-
-.datatable-btn-edit {
-    background-color: #facc15; 
-    color: black;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 200ms ease;
-}
-
-.datatable-btn-delete {
-    background-color: red; 
-    color: white;
-    border: none;
-    padding: 6px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 200ms ease;
-}
-
-.datatable-btn-view:hover,
-.datatable-btn-edit:hover,
-.datatable-btn-delete:hover {
-    opacity: 0.75;
 }
 
 
@@ -133,51 +97,27 @@ tr:hover{
 }
 
 .status-pending {
-    background: red;
-    color: white;
+    color: var(--error);
+    font-size: 14px;
+    font-weight: 800;
 }
 
-.status-route {
-    background: #facc15; 
-    color: #000;
+.status-route { 
+    color: var(--warning);
+    font-size: 14px;
+    font-weight: 800;
 }
 
 .status-delivered {
-    background: green; 
-    color: white;
+    color: var(--success);
+    font-size: 14px;
+    font-weight: 800;
 }
 
-
-
-@media (max-width: 615px){
-    .datatable-header{
-        font-size: 30px;
+@media (max-width: 767px){
+    .datatable-search {
+        width: 80%;
     }
 }
 
-@media (max-width: 1320px){
-    thead th{
-        font-size: 10px;
-    }
-
-    th, td{
-        font-size: 10px;
-    }
-
-    .datatable-status {
-        font-size: 8px;
-    }
-
-    .datatable-btn-view {
-        font-size: 8px;
-    }
-
-    .datatable-btn-edit {
-        font-size: 8px;
-    }
-
-    .datatable-btn-delete {
-        font-size: 8px;
-    }
-}
 

@@ -1,63 +1,79 @@
 .chart-main{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     width: 100%;
     min-height: 100%;
     padding: 20px;
-    gap: 30px;
+    gap: 10px;
+}
+
+.chart-header{
+    color: var(--heading-color);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.chart-grid {
+    width: 100%; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    padding: 10px 10px 10px 10px;
 }
 
 .dataCard{
-    background-color: white;
+    background-color: var(--card-bg);
     height: 450px;
-    width: 90%;
-    border-radius: 20px;
-    box-shadow: gray 0px 4px 12px;
+    border-radius: 30px;
+    border: 3px solid var(--card-border);
     padding: 20px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.dataCard:hover{
+    transform: translateY(-6px);
+    box-shadow: gray 0px 30px 50px;
 }
 
 .chart-goal{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 16px;
 }
 
 .goal-title {
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 800;
-  margin-bottom: 6px;
-  color: var(--text2-color);
+  color: var(--text-color);
 }
 
 .goal-value {
-  font-size: 40px;
-  color: #666;
-  margin-bottom: 12px;
+  font-size: 30px;
+  color: var(--text3-color);
+  font-weight: 300;
 }
 
 .goal-progress-bar {
   width: 100%;
   height: 20px;
-  background-color: #e5e7eb;
+  background-color: var(--card-border);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .goal-progress-fill {
   height: 100%;
-  background: #1F7D53;
+  background: var(--success);
   border-radius: 999px;
 }
 
 .goal-percent {
-  margin-top: 8px;
   font-size: 18px;
   font-weight: 700;
-  color: #1F7D53;
+  color: var(--success);
+  margin-top: auto;
 }
-
 
 @media (max-width: 1023px){
     .dataCard{
@@ -65,7 +81,11 @@
     }
 }
 
-@media (max-width: 483px){
+
+@media (max-width: 540px) {
+    .chart-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
     .goal-title {
         font-size: 35px;
     }
@@ -82,3 +102,4 @@
         font-size: 20px;
     }
 }
+

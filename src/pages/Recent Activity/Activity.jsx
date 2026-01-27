@@ -99,8 +99,7 @@ function Activity() {
               <p className="activity-title">{activity.title}</p>
 
               <p className="activity-desc">
-                {activity.description} –{" "}
-                <span className="activity-time">{activity.time}</span>
+                {activity.description} – {" "} <span className="activity-time">{activity.time}</span>
               </p>
             </div>
           </div>

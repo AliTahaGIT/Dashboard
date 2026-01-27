@@ -1,4 +1,5 @@
 import Avatar from '@mui/material/Avatar';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import './Navbar.css'
 
 function Navbar({ onOpenMobileSidebar }) {
@@ -20,7 +21,7 @@ function Navbar({ onOpenMobileSidebar }) {
             </div>
             <div className='nav-pfp'>
                 <Avatar alt="User" src="https://randomuser.me/api/portraits/men/18.jpg" sx={{ width: 45, height: 45 }} />
-                <p className='pfp-arrow'>⌄</p>
+                <MoreVertIcon className="pfp-arrow"/>
             </div>
         </div>
         

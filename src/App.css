@@ -9,8 +9,9 @@
   --main-border: #D3D3D3;
   --card-bg: #f5f6f8;
   --card-border: #e6e8ec;
-  --hover: #c9cacc;
-  --btn-color: #3E8EF4;
+  --hover: #A9CDFB;
+  --primary-color: #3E8EF4;
+  --primary2-color: #183A7A;
   --btn-altColor: #88c2cd;
   --success: #16a34a;
   --error: #dc2626;
@@ -33,6 +34,12 @@ body {
 
 body {
   background-color: var(--bg2);;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--main-border);
+  width: 90%;
 }
 
 .layout {

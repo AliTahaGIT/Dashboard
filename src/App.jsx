@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-//import { useState } from "react";
+import { useState } from "react";
 
 
 import './App.css'
-//import MobileSideBar from "./components/SideBarMobile/MobileSideBar";
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
@@ -16,23 +15,16 @@ import MobileBottomNav from "./components/MobileBottomNav/MobileBottomNav";
 
 
 function App() {
-  //const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [isBarOpen, setIsBarOpen] = useState(false);
 
 
 
   return (
     <div className="layout">
-      <Sidebar />
-
-      {/*
-      <MobileSideBar
-        isOpen={isMobileSidebarOpen}
-        onClose={() => setIsMobileSidebarOpen(false)}
-      />
-      */}
+      <Sidebar isOpen={isBarOpen}/>
       
       <main className="main-content">
-        <Navbar/>
+        <Navbar isOpen={isBarOpen} Open={() => setIsBarOpen((prev) => !prev)} />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home/>}/>

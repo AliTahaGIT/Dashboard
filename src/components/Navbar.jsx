@@ -1,16 +1,20 @@
 import Avatar from '@mui/material/Avatar';
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import IconButton from '@mui/material/IconButton';
+import IMG from '../assets/ALI IMG.jpg'
+
+
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({isOpen, Open}) {
   return (
     <div className='nav-main'>
         <div className='nav-left'>
-            {/* <p className='burgerMenu' onClick={ onOpenMobileSidebar }>☰</p> */}
-            <div className='nav-top'>
-                <h1 className='nav-header'>Welcome Mr. Ali Taha</h1>
-                <span className='nav-date'>{new Date().toLocaleDateString("en-GB")}</span>
-            </div>
+            <IconButton className='nav-sidebarIcon' onClick={Open}>
+                {isOpen ? <ChevronLeftIcon sx={{ width: 30, height: 30 }}/> : <ChevronRightIcon sx={{ width: 30, height: 30 }}/>}
+            </IconButton>
         </div>
 
 
@@ -20,8 +24,12 @@ function Navbar() {
                 <span className="noti-badge">12</span>
             </div>
             <div className='nav-pfp'>
-                <Avatar alt="User" src="https://randomuser.me/api/portraits/men/18.jpg" sx={{ width: 45, height: 45 }} />
-                <MoreVertIcon className="pfp-arrow"/>
+                <Avatar alt="User" src={IMG} sx={{ width: 55, height: 55 }} />
+                <div className='nav-pfp-info'>
+                    <span className='nav-pfp-info-name'>Mr. Ali Taha</span>
+                    <span className='nav-pfp-info-date'>{new Date().toLocaleDateString("en-GB")}</span>
+                </div>
+                <ExpandMoreIcon className="pfp-arrow"/>
             </div>
         </div>
         

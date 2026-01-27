@@ -60,7 +60,7 @@
 }
 
 .quick-action-btn {
-    background-color: var(--btn-color);
+    background-color: var(--primary-color);
     color: var(--text4-color);
     border: none;
     padding: 10px 32px 10px 32px;
@@ -74,13 +74,13 @@
     margin-left: auto;
     letter-spacing: 0.5px;
     text-shadow: 0 3px 5px gray;
-    box-shadow: 0 3px 20px var(--btn-color);
+    box-shadow: 0 3px 20px var(--primary-color);
 }
 
 .quick-action-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 20px gray;
-    background-color: var(--btn-altColor);
+    background-color: var(--hover);
 }
 
 .quick-action-btn:active {

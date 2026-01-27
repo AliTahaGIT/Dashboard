@@ -1,60 +1,72 @@
-import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import Avatar from '@mui/material/Avatar';
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import TableChartIcon from "@mui/icons-material/TableChart";
+import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
+import HistoryIcon from "@mui/icons-material/History";
+
 import "./Sidebar.css";
 
 const navbarItems = [
   {
     name: "Home",
     path: "/",
-    iconUrl: "https://api.iconify.design/mdi:home-outline.svg?color=%231F1F1F",
+    Icon: HomeOutlinedIcon,
   },
   {
     name: "Statistics",
     path: "/statistics",
-    iconUrl: "https://api.iconify.design/mdi:chart-line.svg?color=%231F1F1F",
+    Icon: ShowChartIcon,
   },
   {
     name: "Data Table",
     path: "/datatable",
-    iconUrl: "https://api.iconify.design/mdi:table.svg?color=%231F1F1F",
+    Icon: TableChartIcon,
   },
   {
     name: "Charts",
     path: "/charts",
-    iconUrl: "https://api.iconify.design/mdi:chart-box-outline.svg?color=%231F1F1F",
+    Icon: InsertChartOutlinedIcon,
   },
   {
     name: "Recent Activity",
     path: "/activity",
-    iconUrl: "https://api.iconify.design/mdi:history.svg?color=%231F1F1F",
+    Icon: HistoryIcon,
   },
 ];
 
 
 
 
-function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+function Sidebar({isOpen}) {
   const location = useLocation();
   const activePath = location.pathname;
   const navigate = useNavigate();
 
   return (
     <nav className={`sidebar ${isOpen ? "" : "sidebar-closed"}`}>
-      <div className="sidebar-top" onClick={() => setIsOpen((v) => !v)} >
+      <div className="sidebar-top">
         <div className="nav-logo">
-          <Avatar alt="Logo" src="https://imgs.search.brave.com/v93cWjhaSlTSUmaHnibH54EXUPveHF_BrSizq3ou_WY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9icmFu/ZGVtaWEub3JnL2Nv/bnRlbmlkby9zdWJp/ZGFzLzIwMjIvMTEv/dGlwb2dyYWZpYS15/LXBhbGV0YS1kZS1j/b2xvci0xMDI0eDU3/Ni5wbmc" sx={{ width: 35, height: 35 }}/>
-          {isOpen ? <p className="nav-logo-name">Amazon</p> : ""}
+          <Avatar alt="Logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGslhUt-pAehYNJfQpFOm44EIh3T4UV0nCHw&s" sx={{ width: 35, height: 35 }}/>
+          {isOpen ? <p className="nav-logo-name">Swedish Technology</p> : ""}
         </div>
-        {isOpen ? "X" : "☰"}
+        <spam className="divider"/>
       </div>
 
       <ul className="sidebar-items">
         {navbarItems.map((item) => (
           <li key={item.path} className={`sidebar-item ${activePath === item.path ? "active" : ""}`} onClick={() => navigate(item.path)}>
-              <img src={item.iconUrl} alt={item.name} className="item-img"/>
-              <p className="item-label">{item.name}</p>
+              <item.Icon
+                className="sidebar-icon"
+                sx={{
+                  color: activePath === item.path ? "#183A7A" : "#1F1F1F",
+                  fontSize: 24,
+                  transition: "color 0.2s ease",
+                }}
+              />
+              <p className={`item-label ${activePath === item.path ? "activeText" : ""}`}>{item.name}</p>
           </li>
         ))}
       </ul>

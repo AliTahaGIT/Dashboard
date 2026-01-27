@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: var(--text-color);
-  padding: 10px 45px 10px 35px;
+  padding: 10px 25px 10px 35px;
   border-bottom: 3px solid var(--main-border);
 }
 
@@ -29,10 +29,10 @@
 
 .nav-left{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 5px;
+}
+
+.nav-sidebarIcon{
+  cursor: pointer;
 }
 
 .nav-right{
@@ -43,28 +43,44 @@
 }
 
 .nav-pfp{
-  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 30px;
+  transition: 
+      background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-pfp:hover{
-  transform: translateY(-3px);
-  transition: 300ms;
+  background-color: var(--main-border);
+  transform: translateY(-2px);
 }
 
-.pfp-img{
-  height: 45px;
+.nav-pfp-info{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.nav-pfp-info-name{
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.nav-pfp-info-date{
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .pfp-arrow{
-  position: absolute;
-  right: -24px;
-  top: 60%;
-  transform: translateY(-70%);
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .nav-icon {
@@ -120,8 +136,12 @@
 }
 
 @media (max-width: 767px){
-  .burgerMenu{
-    display: inline-flex;
-    cursor: pointer;
+  .nav-left{
+    display: none;
+  }
+
+  .nav-main{
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }

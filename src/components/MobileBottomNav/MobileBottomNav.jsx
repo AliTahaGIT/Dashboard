@@ -1,35 +1,22 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import TableChartIcon from "@mui/icons-material/TableChart";
+import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
+import HistoryIcon from "@mui/icons-material/History";
+
+
 import './MobileBottomNav.css'
 
 
 
 const navbarItems = [
-  {
-    name: "Home",
-    path: "/",
-    iconUrl: "https://api.iconify.design/mdi:home-outline.svg?color=%231F1F1F",
-  },
-  {
-    name: "Statistics",
-    path: "/statistics",
-    iconUrl: "https://api.iconify.design/mdi:chart-line.svg?color=%231F1F1F",
-  },
-  {
-    name: "Data Table",
-    path: "/datatable",
-    iconUrl: "https://api.iconify.design/mdi:table.svg?color=%231F1F1F",
-  },
-  {
-    name: "Charts",
-    path: "/charts",
-    iconUrl: "https://api.iconify.design/mdi:chart-box-outline.svg?color=%231F1F1F",
-  },
-  {
-    name: "Recent Activity",
-    path: "/activity",
-    iconUrl: "https://api.iconify.design/mdi:history.svg?color=%231F1F1F",
-  },
+  { name: "Home", path: "/", Icon: HomeOutlinedIcon },
+  { name: "Statistics", path: "/statistics", Icon: ShowChartIcon },
+  { name: "Data Table", path: "/datatable", Icon: TableChartIcon },
+  { name: "Charts", path: "/charts", Icon: InsertChartOutlinedIcon },
+  { name: "Activity", path: "/activity", Icon: HistoryIcon },
 ];
 
 function MobileBottomNav() {
@@ -42,8 +29,17 @@ function MobileBottomNav() {
   return (
     <div className='mobilenav-main'>
         {navbarItems.map((item) => (
-            <li className={`mobilenav-list ${activePath === item.path ? "active" : ""}`}>
-                <img key={item.path} className='mobilenav-icon' src={item.iconUrl} alt={item.name} onClick={() => navigate(item.path)}/>
+            <li key={item.name} className={`mobilenav-list ${activePath === item.path ? "" : "NonActive"}`}>
+                <item.Icon
+                  className="mobilenav-icon"
+                  sx={{
+                    fontSize: 28,
+                    color: activePath === item.path ? "#183A7A" : "#1F1F1F",
+                    transition: "color 0.2s ease",
+                  }}
+                  onClick={() => navigate(item.path)}
+                />
+                <span className={`mobilenav-name ${activePath === item.path ? 'activeText' : ''}`}>{item.name}</span>
             </li>
         ))}
     </div>

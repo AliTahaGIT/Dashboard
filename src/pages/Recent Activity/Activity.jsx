@@ -1,4 +1,15 @@
-import React from 'react'
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import EditIcon from "@mui/icons-material/Edit";
+
+import StorageIcon from "@mui/icons-material/Storage";
+import SyncIcon from "@mui/icons-material/Sync";
+import SecurityIcon from "@mui/icons-material/Security";
+
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import CloudOffIcon from "@mui/icons-material/CloudOff";
+
 import './Activity.css'
 
 
@@ -7,7 +18,7 @@ const recentActivities = [
   {
     id: 1,
     type: "user",
-    icon: "https://api.iconify.design/mdi:account-plus.svg?color=%231F7D53",
+    Icon: PersonAddIcon,
     title: "New users registered",
     description: "5 new users signed up to the platform",
     time: "5 minutes ago",
@@ -15,7 +26,7 @@ const recentActivities = [
   {
     id: 2,
     type: "user",
-    icon: "https://api.iconify.design/mdi:cart-check.svg?color=%231F7D53",
+    Icon: ShoppingCartCheckoutIcon,
     title: "Order completed",
     description: "Order ORD-1023 was successfully delivered",
     time: "45 minutes ago",
@@ -23,7 +34,7 @@ const recentActivities = [
   {
     id: 3,
     type: "user",
-    icon: "https://api.iconify.design/mdi:account-edit.svg?color=%231F7D53",
+    Icon: EditIcon,
     title: "Profile updated",
     description: "Admin updated a user profile details",
     time: "2 hours ago",
@@ -33,7 +44,7 @@ const recentActivities = [
   {
     id: 4,
     type: "system",
-    icon: "https://api.iconify.design/mdi:server.svg?color=%231F7D53",
+    Icon: StorageIcon,
     title: "System maintenance",
     description: "Scheduled maintenance completed successfully",
     time: "Yesterday",
@@ -41,7 +52,7 @@ const recentActivities = [
   {
     id: 5,
     type: "system",
-    icon: "https://api.iconify.design/mdi:database-sync.svg?color=%231F7D53",
+    Icon: SyncIcon,
     title: "Database synced",
     description: "All records synced with backup server",
     time: "Yesterday",
@@ -49,7 +60,7 @@ const recentActivities = [
   {
     id: 6,
     type: "system",
-    icon: "https://api.iconify.design/mdi:shield-check.svg?color=%231F7D53",
+    Icon: SecurityIcon,
     title: "Security scan passed",
     description: "No vulnerabilities detected in latest scan",
     time: "2 days ago",
@@ -59,7 +70,7 @@ const recentActivities = [
   {
     id: 7,
     type: "alert",
-    icon: "https://api.iconify.design/mdi:alert-circle.svg?color=%23dc2626",
+    Icon: ErrorOutlineIcon,
     title: "High order volume",
     description: "Unusual spike in orders detected",
     time: "10 minutes ago",
@@ -67,7 +78,7 @@ const recentActivities = [
   {
     id: 8,
     type: "alert",
-    icon: "https://api.iconify.design/mdi:truck-alert.svg?color=%23dc2626",
+    Icon: LocalShippingIcon,
     title: "Shipment delayed",
     description: "Order ORD-1041 delivery delayed",
     time: "1 hour ago",
@@ -75,12 +86,13 @@ const recentActivities = [
   {
     id: 9,
     type: "alert",
-    icon: "https://api.iconify.design/mdi:server-off.svg?color=%23dc2626",
+    Icon: CloudOffIcon,
     title: "Server downtime",
     description: "One of the servers went offline",
     time: "3 hours ago",
   },
 ];
+
 
 
 function Activity() {
@@ -92,7 +104,12 @@ function Activity() {
         {recentActivities.map((activity) => (
           <div className="activity-card" key={activity.id}>
             <div className="activity-icon">
-              <img src={activity.icon} alt={activity.title} />
+              <activity.Icon
+                sx={{
+                  fontSize: 32,
+                  color: activity.type === "alert" ? "#dc2626" : "#3E8EF4",
+                }}
+              />
             </div>
 
             <div className="activity-content">

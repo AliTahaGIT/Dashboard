@@ -2,6 +2,7 @@
   background-color: var(--bg2);
   min-height: 100vh;
   width: 260px;
+  padding-top: 34px;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -15,19 +16,21 @@
 
 .active{
   background-color: var(--hover);
+  transform: translateX(5px);
+}
+
+.activeText{
+  color: var(--primary2-color);
+  font-weight: 600;
 }
 
 .sidebar-top{
     color: var(--text-color);
     display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 47px;
-    padding-left: 8px;
-    padding-bottom: 8px;
-    gap: 22px;
-    border-bottom: 3px solid var(--main-border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
 }
 
 .nav-logo{
@@ -62,12 +65,18 @@
     font-weight: 500;
     transition: 
       background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 350ms cubic-bezier(0.4, 0, 0.2, 1),
       transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar-item:hover{
     background-color: var(--hover);
-    color: var(--text-color);
+    color: var(--primary2-color);
+    transform: translateX(5px);
+}
+
+.sidebar-item:hover .sidebar-icon {
+  color: var(--primary2-color);
 }
 
 .item-img{

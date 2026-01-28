@@ -22,7 +22,18 @@ function Navbar({isOpen, Open}) {
     const open = Boolean(anchor);
     const navigate = useNavigate();
 
-
+    const menuItems = [
+        {
+            label: "View Profile",
+            icon: <PersonIcon/>,
+            onClick: () => navigate("/profile"),
+        },
+        {
+            label: "Settings",
+            icon: <SettingsIcon/>,
+            onClick: () => navigate("/settings"),
+        }
+    ];
 
   return (
     <div className='nav-main'>
@@ -53,25 +64,45 @@ function Navbar({isOpen, Open}) {
                 onClose={() => setAnchor(null)}
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 transformOrigin={{ vertical: "top", horizontal: "right" }}
-                PaperProps={{
-                    sx: {
-                        borderRadius: '15px',
-                    }
+                sx={{
+                    "& .MuiPaper-root": {
+                        padding: "12px",
+                        borderRadius: '20px',
+                        border: '2px solid var(--main-border)'
+                    },
+                    "& .MuiMenuItem-root + .MuiMenuItem-root": {
+                        marginTop: "16px",
+                    },
                 }}
-            >
-                <MenuItem onClick={() => {setAnchor(null); navigate("/profile");}}>
-                    <ListItemIcon>
-                        <PersonIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>View Profile</ListItemText>
-                </MenuItem>
+                >
+                {menuItems.map((item, i) => (
+                    <MenuItem
+                        key={i}
+                        onClick={() => {
+                            setAnchor(null);
+                            item.onClick();
+                        }}
+                        sx={{
+                            backgroundColor: "var(--primary-color)",
+                            borderRadius: "20px",
+                            boxShadow: "0 3px 14px #3E8EF4",
+                            transition: "all 0.2s ease",
 
-                <MenuItem onClick={() => setAnchor(null)}>
-                    <ListItemIcon>
-                        <SettingsIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>Settings</ListItemText>
-                </MenuItem>
+                            "&:hover": {
+                                boxShadow: "0 5px 20px var(--text3-color)",
+                                backgroundColor: "var(--hover)",
+                            },
+                        }}
+                    >
+                    <ListItemIcon sx={{ color: "var(--text4-color)" }}> {item.icon} </ListItemIcon>
+
+                    <ListItemText
+                        primary={item.label}
+                        primaryTypographyProps={{ fontWeight: 600 }}
+                        sx={{ color: "var(--text4-color)" }}
+                    />
+                    </MenuItem>
+                ))}
             </Menu>
         </div>
         

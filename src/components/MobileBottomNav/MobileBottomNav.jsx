@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
-import TableChartIcon from "@mui/icons-material/TableChart";
+import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
+import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
 import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
-import HistoryIcon from "@mui/icons-material/History";
+import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 
 
 import './MobileBottomNav.css'
@@ -13,10 +13,10 @@ import './MobileBottomNav.css'
 
 const navbarItems = [
   { name: "Home", path: "/", Icon: HomeOutlinedIcon },
-  { name: "Statistics", path: "/statistics", Icon: ShowChartIcon },
-  { name: "Data Table", path: "/datatable", Icon: TableChartIcon },
+  { name: "Statistics", path: "/statistics", Icon: ShowChartOutlinedIcon },
+  { name: "Data Table", path: "/datatable", Icon: TableChartOutlinedIcon },
   { name: "Charts", path: "/charts", Icon: InsertChartOutlinedIcon },
-  { name: "Activity", path: "/activity", Icon: HistoryIcon },
+  { name: "Recent Activity", path: "/activity", Icon: HistoryOutlinedIcon },
 ];
 
 function MobileBottomNav() {

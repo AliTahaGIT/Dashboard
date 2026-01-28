@@ -92,6 +92,15 @@ function Navbar({isOpen, Open}) {
                                 boxShadow: "0 5px 20px var(--text3-color)",
                                 backgroundColor: "var(--hover)",
                             },
+                            "&.Mui-focusVisible": {
+                                backgroundColor: "#3E8EF4",
+                            },
+                            "&.Mui-selected": {
+                                backgroundColor: "#3E8EF4",
+                            },
+                            "&.Mui-selected:hover": {
+                                backgroundColor: "#3E8EF4",
+                            },
                         }}
                     >
                     <ListItemIcon sx={{ color: "var(--text4-color)" }}> {item.icon} </ListItemIcon>

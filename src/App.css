@@ -12,6 +12,7 @@
   --hover: #A9CDFB;
   --primary-color: #3E8EF4;
   --primary2-color: #183A7A;
+  --primary3-color: #EDF4FF;
   --btn-altColor: #88c2cd;
   --success: #16a34a;
   --error: #dc2626;
@@ -40,6 +41,12 @@ body {
   height: 1px;
   background-color: var(--main-border);
   width: 90%;
+}
+
+.dividerPage {
+  height: 1px;
+  background-color: var(--main-border);
+  width: 99%;
 }
 
 .layout {

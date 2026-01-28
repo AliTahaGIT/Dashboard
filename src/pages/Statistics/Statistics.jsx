@@ -97,7 +97,7 @@ function Statistics() {
         <h1 className='stats-header'>Statistics</h1>
         <div className='stats-cards-main'>
             {dashboardMetrics.map((metric) => (
-                <div className='stats-card'>
+                <div className='stats-card' key={metric.name}>
                     <img alt={metric.name} src={metric.icon} className="stat-card-img"/>
                     <p className='stat-card-name'>{metric.name}</p>
                     <p className='stat-card-value'>{metric.value}</p>

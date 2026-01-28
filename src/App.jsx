@@ -12,6 +12,7 @@ import DataTable from "./pages/Data Table/DataTable";
 import Chart from "./pages/Charts/Chart";
 import Activity from "./pages/Recent Activity/Activity";
 import MobileBottomNav from "./components/MobileBottomNav/MobileBottomNav";
+import Profile from "./pages/Profile/Profile";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/datatable" element={<DataTable/>}/>
             <Route path="/charts" element={<Chart/>}/>
             <Route path="/activity" element={<Activity/>}/>
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </div>
         <MobileBottomNav/>

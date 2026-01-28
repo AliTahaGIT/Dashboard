@@ -52,7 +52,7 @@ function Sidebar({isOpen}) {
           <Avatar alt="Logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGslhUt-pAehYNJfQpFOm44EIh3T4UV0nCHw&s" sx={{ width: 35, height: 35 }}/>
           {isOpen ? <p className="nav-logo-name">Swedish Technology</p> : ""}
         </div>
-        <spam className="divider"/>
+        <span className="divider"/>
       </div>
 
       <ul className="sidebar-items">

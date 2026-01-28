@@ -29,7 +29,7 @@ function MobileBottomNav() {
   return (
     <div className='mobilenav-main'>
         {navbarItems.map((item) => (
-            <li key={item.name} className={`mobilenav-list ${activePath === item.path ? "" : "NonActive"}`}>
+            <li key={item.name} className={`mobilenav-list ${activePath === item.path ? "" : "NonActive"}`} onClick={() => navigate(item.path)}>
                 <item.Icon
                   className="mobilenav-icon"
                   sx={{
@@ -37,7 +37,6 @@ function MobileBottomNav() {
                     color: activePath === item.path ? "#183A7A" : "#1F1F1F",
                     transition: "color 0.2s ease",
                   }}
-                  onClick={() => navigate(item.path)}
                 />
                 <span className={`mobilenav-name ${activePath === item.path ? 'activeText' : ''}`}>{item.name}</span>
             </li>

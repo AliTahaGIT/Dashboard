@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 import Avatar from '@mui/material/Avatar';
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -11,11 +13,11 @@ import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import "./Sidebar.css";
 
 const navbarItems = [
-  { name: "Home", path: "/", Icon: HomeOutlinedIcon },
-  { name: "Statistics", path: "/statistics", Icon: ShowChartOutlinedIcon },
-  { name: "Data Table", path: "/datatable", Icon: TableChartOutlinedIcon },
-  { name: "Charts", path: "/charts", Icon: InsertChartOutlinedIcon },
-  { name: "Recent Activity", path: "/activity", Icon: HistoryOutlinedIcon },
+  { key: "sidebar.home", path: "/", Icon: HomeOutlinedIcon },
+  { key: "sidebar.statistics", path: "/statistics", Icon: ShowChartOutlinedIcon },
+  { key: "sidebar.datatable", path: "/datatable", Icon: TableChartOutlinedIcon },
+  { key: "sidebar.charts", path: "/charts", Icon: InsertChartOutlinedIcon },
+  { key: "sidebar.activity", path: "/activity", Icon: HistoryOutlinedIcon },
 ];
 
 
@@ -26,6 +28,7 @@ function Sidebar({isOpen}) {
   const location = useLocation();
   const activePath = location.pathname;
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <nav className={`sidebar ${isOpen ? "" : "sidebar-closed"}`}>
@@ -48,7 +51,7 @@ function Sidebar({isOpen}) {
                   transition: "color 0.2s ease",
                 }}
               />
-              <p className={`item-label ${activePath === item.path ? "activeText" : ""}`}>{item.name}</p>
+              <p className={`item-label ${activePath === item.path ? "activeText" : ""}`}>{t(item.key)}</p>
           </li>
         ))}
       </ul>

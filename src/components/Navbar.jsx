@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@mui/material/styles";
 
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -21,30 +23,62 @@ function Navbar({isOpen, Open}) {
     const [anchor, setAnchor] = useState(null);
     const open = Boolean(anchor);
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
+    const isArabic = i18n.language === "ar";
+    const setLang = (lng) => {
+        localStorage.setItem("lang", lng);
+        i18n.changeLanguage(lng);
+    };
+    const theme = useTheme();
+    const isRtl = theme.direction === "rtl";
+
+
+
+
+
+
 
     const menuItems = [
         {
-            label: "View Profile",
-            icon: <PersonIcon/>,
+            label: t("profile.viewProfile"),
+            icon: <PersonIcon />,
             onClick: () => navigate("/profile"),
         },
         {
-            label: "Settings",
-            icon: <SettingsIcon/>,
+            label: t("profile.settings"),
+            icon: <SettingsIcon />,
             onClick: () => navigate("/settings"),
-        }
+        },
     ];
 
   return (
     <div className='nav-main'>
         <div className='nav-left'>
             <IconButton className='nav-sidebarIcon' onClick={Open}>
-                {isOpen ? <ChevronLeftIcon sx={{ width: 30, height: 30 }}/> : <ChevronRightIcon sx={{ width: 30, height: 30 }}/>}
+                {isOpen ? (
+                    isRtl ? (
+                        <ChevronRightIcon sx={{ width: 30, height: 30 }} />
+                    ) : (
+                        <ChevronLeftIcon sx={{ width: 30, height: 30 }} />
+                    )
+                    ) : isRtl ? (
+                        <ChevronLeftIcon sx={{ width: 30, height: 30 }} />
+                    ) : (
+                        <ChevronRightIcon sx={{ width: 30, height: 30 }} />
+                )}
             </IconButton>
         </div>
 
 
         <div className='nav-right'>
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <IconButton onClick={() => setLang("en")} sx={{ opacity: isArabic ? 0.6 : 1 , fontSize: '16px'}}>
+                    EN
+                </IconButton>
+                <IconButton onClick={() => setLang("ar")} sx={{ opacity: isArabic ? 1 : 0.6, fontSize: '16px' }}>
+                    AR
+                </IconButton>
+            </div>
             <div className="nav-icon">
                 <img src="https://api.iconify.design/mdi:bell-outline.svg?color=%2300000" alt="notifications" className="nav-img"/>
                 <span className="noti-badge">12</span>
@@ -52,8 +86,8 @@ function Navbar({isOpen, Open}) {
             <div className='nav-pfp' onClick={(e) => setAnchor(e.currentTarget)}>
                 <Avatar alt="User" src={IMG} sx={{ width: 55, height: 55 }} />
                 <div className='nav-pfp-info'>
-                    <span className='nav-pfp-info-name'>Mr. Ali Taha</span>
-                    <span className='nav-pfp-info-date'>{new Date().toLocaleDateString("en-GB")}</span>
+                    <span className='nav-pfp-info-name'>{t("profile.name")}</span>
+                    <span className='nav-pfp-info-date'>{new Date().toLocaleDateString(isArabic ? "ar-AE" : "en-GB")}</span>
                 </div>
                 <ExpandMoreIcon className="pfp-arrow"/>
             </div>

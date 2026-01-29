@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
@@ -12,17 +13,18 @@ import './MobileBottomNav.css'
 
 
 const navbarItems = [
-  { name: "Home", path: "/", Icon: HomeOutlinedIcon },
-  { name: "Statistics", path: "/statistics", Icon: ShowChartOutlinedIcon },
-  { name: "Data Table", path: "/datatable", Icon: TableChartOutlinedIcon },
-  { name: "Charts", path: "/charts", Icon: InsertChartOutlinedIcon },
-  { name: "Recent Activity", path: "/activity", Icon: HistoryOutlinedIcon },
+  { key: "sidebar.home", path: "/", Icon: HomeOutlinedIcon },
+  { key: "sidebar.statistics", path: "/statistics", Icon: ShowChartOutlinedIcon },
+  { key: "sidebar.datatable", path: "/datatable", Icon: TableChartOutlinedIcon },
+  { key: "sidebar.charts", path: "/charts", Icon: InsertChartOutlinedIcon },
+  { key: "sidebar.activity", path: "/activity", Icon: HistoryOutlinedIcon },
 ];
 
 function MobileBottomNav() {
     const location = useLocation();
     const activePath = location.pathname;
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
 
     
@@ -38,7 +40,7 @@ function MobileBottomNav() {
                     transition: "color 0.2s ease",
                   }}
                 />
-                <span className={`mobilenav-name ${activePath === item.path ? 'activeText' : ''}`}>{item.name}</span>
+                <span className={`mobilenav-name ${activePath === item.path ? 'activeText' : ''}`}>{t(item.key)}</span>
             </li>
         ))}
     </div>

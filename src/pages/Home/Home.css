@@ -63,7 +63,7 @@
     background-color: var(--primary-color);
     color: var(--text4-color);
     border: none;
-    padding: 10px 32px 10px 32px;
+    padding: 10px 32px;
     border-radius: 12px;
     font-size: 14px;
     font-weight: 600;
@@ -71,7 +71,10 @@
     transition: all 0.25s ease;
     min-width: 120px;
     margin-top: auto;
-    margin-left: auto;
+
+    /* RTL/LTR safe */
+    margin-inline-start: auto;
+
     letter-spacing: 0.5px;
     text-shadow: 0 3px 5px gray;
     box-shadow: 0 3px 20px var(--primary-color);

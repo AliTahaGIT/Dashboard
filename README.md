@@ -17,6 +17,8 @@ Dashboard Includes:
 - chart.js
 - react-chartjs-2
 - Material UI
+- i18next react-i18next i18next-browser-languagedetector
+- @emotion/cache stylis stylis-plugin-rtl
 
 ## Challenges Encountered
 - I normally don't do sidebars so this sidebar was something challenging

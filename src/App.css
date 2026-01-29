@@ -17,6 +17,9 @@
   --success: #16a34a;
   --error: #dc2626;
   --warning: #F59E0B;
+
+  --font-en: "IBM Plex Sans", Arial, sans-serif;
+  --font-ar: "Cairo", Arial, sans-serif;
 }
 
 
@@ -24,13 +27,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "IBM Plex Sans", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   overflow: hidden;
+  font-family: var(--font-en);
+}
+
+/* When Arabic (RTL) is active */
+html[dir="rtl"] body {
+  font-family: var(--font-ar);
 }
 
 body {

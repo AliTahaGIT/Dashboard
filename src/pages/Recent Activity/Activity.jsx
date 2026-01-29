@@ -1,3 +1,6 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import EditIcon from "@mui/icons-material/Edit";
@@ -10,95 +13,105 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CloudOffIcon from "@mui/icons-material/CloudOff";
 
-import './Activity.css'
-
+import "./Activity.css";
 
 const recentActivities = [
-  // USER ACTIONS
   {
     id: 1,
     type: "user",
     Icon: PersonAddIcon,
-    title: "New users registered",
-    description: "5 new users signed up to the platform",
-    time: "5 minutes ago",
+    titleKey: "activity.newUsers",
+    descKey: "activity.newUsersDesc",
+    time: { value: 5, unit: "min" },
   },
   {
     id: 2,
     type: "user",
     Icon: ShoppingCartCheckoutIcon,
-    title: "Order completed",
-    description: "Order ORD-1023 was successfully delivered",
-    time: "45 minutes ago",
+    titleKey: "activity.orderCompleted",
+    descKey: "activity.orderCompletedDesc",
+    time: { value: 45, unit: "min" },
   },
   {
     id: 3,
     type: "user",
     Icon: EditIcon,
-    title: "Profile updated",
-    description: "Admin updated a user profile details",
-    time: "2 hours ago",
+    titleKey: "activity.profileUpdated",
+    descKey: "activity.profileUpdatedDesc",
+    time: { value: 2, unit: "hour" },
   },
-
-  // SYSTEM EVENTS
   {
     id: 4,
     type: "system",
     Icon: StorageIcon,
-    title: "System maintenance",
-    description: "Scheduled maintenance completed successfully",
-    time: "Yesterday",
+    titleKey: "activity.maintenance",
+    descKey: "activity.maintenanceDesc",
+    time: { value: 1, unit: "day", label: "yesterday" },
   },
   {
     id: 5,
     type: "system",
     Icon: SyncIcon,
-    title: "Database synced",
-    description: "All records synced with backup server",
-    time: "Yesterday",
+    titleKey: "activity.dbSynced",
+    descKey: "activity.dbSyncedDesc",
+    time: { value: 1, unit: "day", label: "yesterday" },
   },
   {
     id: 6,
     type: "system",
     Icon: SecurityIcon,
-    title: "Security scan passed",
-    description: "No vulnerabilities detected in latest scan",
-    time: "2 days ago",
+    titleKey: "activity.securityScan",
+    descKey: "activity.securityScanDesc",
+    time: { value: 2, unit: "day" },
   },
-
-  // ALERTS
   {
     id: 7,
     type: "alert",
     Icon: ErrorOutlineIcon,
-    title: "High order volume",
-    description: "Unusual spike in orders detected",
-    time: "10 minutes ago",
+    titleKey: "activity.highVolume",
+    descKey: "activity.highVolumeDesc",
+    time: { value: 10, unit: "min" },
   },
   {
     id: 8,
     type: "alert",
     Icon: LocalShippingIcon,
-    title: "Shipment delayed",
-    description: "Order ORD-1041 delivery delayed",
-    time: "1 hour ago",
+    titleKey: "activity.shipmentDelayed",
+    descKey: "activity.shipmentDelayedDesc",
+    time: { value: 1, unit: "hour" },
   },
   {
     id: 9,
     type: "alert",
     Icon: CloudOffIcon,
-    title: "Server downtime",
-    description: "One of the servers went offline",
-    time: "3 hours ago",
+    titleKey: "activity.serverDown",
+    descKey: "activity.serverDownDesc",
+    time: { value: 3, unit: "hour" },
   },
 ];
 
-
-
 function Activity() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+  const nf = new Intl.NumberFormat(isArabic ? "ar-EG" : "en-US");
+
+  const formatTime = (time) => {
+    if (time.label === "yesterday") {
+      return isArabic ? "أمس" : "Yesterday";
+    }
+
+    const num = nf.format(time.value);
+
+    if (time.unit === "min") return isArabic ? `${num} دقيقة` : `${num} minutes ago`;
+    if (time.unit === "hour") return isArabic ? `${num} ساعة` : `${num} hours ago`;
+    if (time.unit === "day") return isArabic ? `${num} أيام` : `${num} days ago`;
+
+    return "";
+  };
+
   return (
     <div className="activity-main">
-      <h1 className="activity-header">Recent Activity</h1>
+      <h1 className="activity-header">{t("activity.title")}</h1>
 
       <div className="activity-cards-main">
         {recentActivities.map((activity) => (
@@ -113,10 +126,11 @@ function Activity() {
             </div>
 
             <div className="activity-content">
-              <p className="activity-title">{activity.title}</p>
+              <p className="activity-title">{t(activity.titleKey)}</p>
 
               <p className="activity-desc">
-                {activity.description} – {" "} <span className="activity-time">{activity.time}</span>
+                {t(activity.descKey)} –{" "}
+                <span className="activity-time">{formatTime(activity.time)}</span>
               </p>
             </div>
           </div>
@@ -126,4 +140,4 @@ function Activity() {
   );
 }
 
-export default Activity
+export default Activity;

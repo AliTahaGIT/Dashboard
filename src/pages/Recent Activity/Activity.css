@@ -78,7 +78,7 @@
 .activity-time {
   font-size: 14px;
   font-weight: 400;
-  color: var(--text3-color);
+  color: var(--primary-color);
 }
 
 @media (max-width: 767px){

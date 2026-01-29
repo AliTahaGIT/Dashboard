@@ -10,6 +10,7 @@ const resources = {
         settings: "Settings",
         name: 'Mr. Ali Taha'
       },
+
       sidebar: {
         home: "Home",
         statistics: "Statistics",
@@ -17,6 +18,7 @@ const resources = {
         charts: "Charts",
         activity: "Recent Activity",
       },
+
       home: {
         quickActionsTitle: 'Quick Actions',
         quickActions: {
@@ -66,7 +68,54 @@ const resources = {
             button: "Backup",
           },
         },
-      }
+      },
+
+      stats: {
+        title: "Statistics",
+        totalUsers: "Total Users",
+        activeOrders: "Active Orders",
+        revenue: "Revenue",
+        conversionRate: "Conversion Rate",
+        newSignups: "New Signups",
+        pendingTasks: "Pending Tasks",
+        avgSessionTime: "Avg. Session Time",
+        activeSubscribers: "Active Subscribers",
+        completedOrders: "Completed Orders",
+        refundRequests: "Refund Requests",
+        systemUptime: "System Uptime",
+        supportTickets: "Support Tickets",
+      },
+
+      activity: {
+        title: "Recent Activity",
+
+        newUsers: "New users registered",
+        newUsersDesc: "5 new users signed up to the platform",
+
+        orderCompleted: "Order completed",
+        orderCompletedDesc: "Order ORD-1023 was successfully delivered",
+
+        profileUpdated: "Profile updated",
+        profileUpdatedDesc: "Admin updated a user profile details",
+
+        maintenance: "System maintenance",
+        maintenanceDesc: "Scheduled maintenance completed successfully",
+
+        dbSynced: "Database synced",
+        dbSyncedDesc: "All records synced with backup server",
+
+        securityScan: "Security scan passed",
+        securityScanDesc: "No vulnerabilities detected in latest scan",
+
+        highVolume: "High order volume",
+        highVolumeDesc: "Unusual spike in orders detected",
+
+        shipmentDelayed: "Shipment delayed",
+        shipmentDelayedDesc: "Order ORD-1041 delivery delayed",
+
+        serverDown: "Server downtime",
+        serverDownDesc: "One of the servers went offline",
+      },
     },
   },
   ar: {
@@ -76,6 +125,7 @@ const resources = {
         settings: "الإعدادات",
         name: 'أ. علي طه'
       },
+
       sidebar: {
         home: "الرئيسية",
         statistics: "الإحصائيات",
@@ -83,6 +133,7 @@ const resources = {
         charts: "الرسوم البيانية",
         activity: "النشاط الأخير",
       },
+
       home: {
         quickActionsTitle: 'إجراءات سريعة',
         quickActions: {
@@ -132,7 +183,55 @@ const resources = {
             button: "نسخ احتياطي",
           },
         },
-      }
+      },
+      
+      stats: {
+        title: "الإحصائيات",
+        totalUsers: "إجمالي المستخدمين",
+        activeOrders: "الطلبات النشطة",
+        revenue: "الإيرادات",
+        conversionRate: "معدل التحويل",
+        newSignups: "التسجيلات الجديدة",
+        pendingTasks: "المهام المعلّقة",
+        avgSessionTime: "متوسط مدة الجلسة",
+        activeSubscribers: "المشتركون النشطون",
+        completedOrders: "الطلبات المكتملة",
+        refundRequests: "طلبات الاسترجاع",
+        systemUptime: "جاهزية النظام",
+        supportTickets: "تذاكر الدعم",
+      },
+
+      activity: {
+        title: "النشاط الأخير",
+
+        newUsers: "تسجيل مستخدمين جدد",
+        newUsersDesc: "تم تسجيل ٥ مستخدمين جدد في المنصة",
+
+        orderCompleted: "اكتمل الطلب",
+        orderCompletedDesc: "تم تسليم الطلب ORD-1023 بنجاح",
+
+        profileUpdated: "تم تحديث الملف الشخصي",
+        profileUpdatedDesc: "قام المدير بتحديث بيانات مستخدم",
+
+        maintenance: "صيانة النظام",
+        maintenanceDesc: "تم الانتهاء من الصيانة المجدولة بنجاح",
+
+        dbSynced: "تمت مزامنة قاعدة البيانات",
+        dbSyncedDesc: "تمت مزامنة جميع السجلات مع الخادم الاحتياطي",
+
+        securityScan: "اجتياز فحص الأمان",
+        securityScanDesc: "لم يتم اكتشاف أي ثغرات في الفحص الأخير",
+
+        highVolume: "ارتفاع عدد الطلبات",
+        highVolumeDesc: "تم اكتشاف زيادة غير طبيعية في الطلبات",
+
+        shipmentDelayed: "تأخير الشحنة",
+        shipmentDelayedDesc: "تم تأخير تسليم الطلب ORD-1041",
+
+        serverDown: "توقف الخادم",
+        serverDownDesc: "أحد الخوادم خرج عن الخدمة",
+      },
+
     },
   },
 };

@@ -72,10 +72,10 @@ function Navbar({isOpen, Open}) {
 
         <div className='nav-right'>
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                <IconButton onClick={() => setLang("en")} sx={{ opacity: isArabic ? 0.6 : 1 , fontSize: '16px'}}>
+                <IconButton onClick={() => setLang("en")} sx={{ opacity: isArabic ? 0.6 : 1 , fontSize: '16px', color: isArabic ? '' : 'var(--primary-color)'}}>
                     EN
                 </IconButton>
-                <IconButton onClick={() => setLang("ar")} sx={{ opacity: isArabic ? 1 : 0.6, fontSize: '16px' }}>
+                <IconButton onClick={() => setLang("ar")} sx={{ opacity: isArabic ? 1 : 0.6, fontSize: '16px', color: isArabic ? 'var(--primary-color)' : '' }}>
                     AR
                 </IconButton>
             </div>
